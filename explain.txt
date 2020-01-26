@@ -1,0 +1,6 @@
+1,npm intall bootstrap uuid --save
+
+2,public/index.html 里面粘贴 font awsome
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+
