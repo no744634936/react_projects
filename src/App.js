@@ -42,7 +42,36 @@ class App extends Component{
       editItem:false,
     })
   }
+  clearList=(e)=>{
+    this.setState({
+      items:[],
+    })
+  }
+  handleDelete=(id)=>{
+    //不能写成这样 filter(item=>item.id!==id)
+    const filterItems=this.state.items.filter(item=>item.id!==id)
+    this.setState({
+      items:filterItems,
+    })
 
+  }
+  handleEdit=(id)=>{
+    //点击笔之后，点击的那一条不见了。
+    const filterItems=this.state.items.filter(item=>item.id!==id)
+    //选出点击的那一个
+    const selectedItem=this.state.items.find(item=>item.id===id)
+    console.log(selectedItem);
+    
+    this.setState({
+      items:filterItems,
+      item:selectedItem.title,
+      //变成编辑模式的flag
+      editItem:true,
+      //记住点击的记录的id
+      id:id
+    })
+    //
+  }
   render(){
     return(
       <div className="container">
@@ -54,9 +83,14 @@ class App extends Component{
            <TodoInput 
            item={this.state.item} 
            handleChange={this.handleChange}
-           handleSubmit={this.handleSubmit}>
+           handleSubmit={this.handleSubmit}
+           editItem={this.state.editItem}>
            </TodoInput>
-           <TodoList items={this.state.items}></TodoList>
+           <TodoList 
+                    items={this.state.items} 
+                    clearList={this.clearList} 
+                    handleDelete={this.handleDelete}
+                    handleEdit={this.handleEdit}></TodoList>
         </div>
     )
   }

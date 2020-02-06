@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class TodoInput extends Component {
     render() {
-        const {item,handleChange,handleSubmit}=this.props
+        const {item,handleChange,handleSubmit,editItem}=this.props
         return (
             <div className="card card-body my-3">
                 <form onSubmit={handleSubmit}>
@@ -23,7 +23,10 @@ class TodoInput extends Component {
                             />
                     
                     </div>
-                    <button className="btn btn-block btn-primary mt-3">add item</button>
+                    {/* 根据editItem不同改变文字跟颜色 */}
+                    <button className={editItem?"btn btn-block btn-success mt-3":"btn btn-block btn-primary mt-3"}>
+                            {editItem ?"edit item":"add itme"}
+                    </button>
                 </form>
             </div>
         )
