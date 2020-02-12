@@ -1,0 +1,28 @@
+
+set up
+
+1,install sass (npm i node-sass --save). because I will use scss
+
+1,delete content of App.css and index.css
+  then rename to App.scss and index.scss
+
+2,in file index.js and App.js,
+   rename to App.scss and index.scss
+
+3, paste the google font and font awsome icon cdn into index.html
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Zhi+Mang+Xing&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/ae35ad8e82.js" crossorigin="anonymous"></script>
+
+
+4,设定index.scss。记住要将google font 的font family 放进body
+
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Zhi Mang Xing', cursive;
+
+
+5，把img文件夹放入public里面。
+
+6,写代码的时候item跟list要分开。
+
+
+7.用github 账号注册netlify，建网站 
